@@ -14,6 +14,13 @@ pipeline {
       }
     }
 
+    stage('Deliver') {
+      steps {
+        sh '''sh \'./jenkins/scripts/deliver.sh\'
+sh \'./jenkins/scripts/kill.sh\''''
+      }
+    }
+
   }
   environment {
     CI = 'true'
